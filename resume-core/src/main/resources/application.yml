@@ -1,0 +1,37 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: resume-master
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 111.67.196.37:8848
+        username: nacos
+        password: nacos
+  redis:
+    client-type: jedis
+    host: 111.67.196.37
+    password: 123456
+    port: 6379
+    jedis:
+      pool:
+        # 连接池最⼤连接数（使⽤负值表示没有限制）
+        max-active: 16
+        # 连接池中的最⼤空闲连接
+        max-idle: 16
+        # 连接池中的最⼩空闲连接
+        min-idle: 16
+        # 连接池最⼤阻塞等待时间（使⽤负值表示没有限制）
+        max-wait: 60000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://111.67.196.37:3306/resume_master?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 19940429
+
+#配置plus打印sql日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
