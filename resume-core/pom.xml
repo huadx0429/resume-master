@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <artifactId>resume-master</artifactId>
+            <artifactId>resume-common</artifactId>
             <groupId>master.resume</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
