@@ -1,0 +1,640 @@
+<#setting datetime_format="yyyy-MM"/>
+<#setting date_format="yyyy-MM-dd"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <base href="https://dcloud-link-2023.oss-cn-beijing.aliyuncs.com/pdf/"></base>
+    <style>
+        @font-face{font-family: "simsan";src:url("https://dcloud-link-2023.oss-cn-beijing.aliyuncs.com/pdf/font/black.ttf") format("truetype");}
+        * {
+            font-family: simsan,sans-serif !important;
+        }
+        body{
+            background-color: rgba(250, 250, 250, 1);
+            margin: 0 !important;
+        }
+        h2{
+            font-family: cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 26px;
+            color: #FFFFFF;
+        }
+        * {
+            page-break-inside: avoid;
+            page-break-after: avoid;
+            page-break-before: avoid;
+        }
+        .base-info{
+            width: 100%;
+            height: 370px;
+            background-color: rgba(65, 151, 248, 1);
+        }
+        .base-info-left{
+            width: 25%;
+            height: 100%;
+            float: left;
+        }
+        .head-picture{
+            margin-left:40px;
+            margin-top: 160px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+        .base-info-right{
+            width: 75%;
+            height: 370px;
+            float: left;
+        }
+        .base-right-top{
+            width:100%;
+            height: 100px;
+        }
+        .user-name{
+            height: 60px;
+        }
+        .info-detail{
+            width: 100%;
+            height: 230px;
+            float: left;
+            position:absolute;
+        }
+        .info-detail2{
+            width: 100%;
+            height: 230px;
+            margin-left: 50%;
+            float: left;
+        }
+        .detail-line{
+            margin-top: 10px;
+        }
+        .detail-logo{
+            width: 14px;
+            height: 14px;
+        }
+        .detail-name{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        .detail-content{
+            font-family: 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+        .extra-info{
+            width: 100%;
+            height: auto;
+            display: table;
+        }
+        .extra-part{
+            width: 94%;
+            margin-left: 3%;
+            margin-top: 50px;
+            height: auto;
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            float: left;
+            display: block;
+        }
+        .extra-part-model{
+            padding: 20px 30px;
+            height: auto;
+        }
+        .extra-title{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 20px;
+            color: #0876F7;
+        }
+        .edu-content-left{
+            float: left;
+            width: 25%;
+        }
+        .extra-edu-date{
+            padding-left: 30px;
+        }
+        .edu-date{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            margin-left: 10px;
+            font-size: small;
+        }
+        .extra-detail-left{
+            padding-left: 55px;
+
+        }
+        .extra-detail-name{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            line-height: 1px;
+            font-size: smaller;
+        }
+        .extra-detail-type{
+            font-family: 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            color: #333333;
+            line-height: 1px;
+            font-size: small;
+            padding-top: 5px;
+            padding-bottom: 20px;
+        }
+        .extra-content{
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+        .extra-top{
+        }
+        .edu-content-right{
+            padding-left: 30px;
+            float: left;
+        }
+        .base-right-logo{
+            float: right;
+            width: 120px;
+            padding-right: 40px;
+        }
+        .extra-org-name{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .extra-org-logo{
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .edu-info{
+            margin-left: 20px;
+            float: left;
+        }
+        .edu-info-detail{
+            margin-top: 15px;
+            font-size: x-small;
+        }
+        .doc-desc{
+            display: block;
+            font-family: 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            color: #888888;
+            line-height: 22px;
+            font-size: 14px;
+            text-align: left;
+            padding: 20px 55px;
+        }
+        .work-desc{
+            display: block;
+            font-family: 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            color: #888888;
+            line-height: 22px;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 80px;
+            padding: 20px 55px;
+        }
+        .extra-work-date{
+            padding-left: 30px;
+            margin-top: 10px;
+        }
+        .teach-title{
+            height: 38px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .teach-title-inside{
+            background-color: rgba(250, 250, 250, 1);
+            height: 100%;
+        }
+        .paper-desc{
+            font-family: 'Arial Negreta', 'Arial Normal', 'Arial', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 14px;
+            text-align: left;
+        }
+        .teach-content{
+            padding: 20px 30px;
+        }
+        .teach-content-item{
+            color: #888888;
+            line-height: 25px;
+            font-size: 14px;
+            text-align: left;
+        }
+        .footer{
+            height: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        .footer-info{
+            color: #888888;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <#global defaultLogo="	https://www.acabridge.net/assets/svg/institute.svg">
+    <#global defaultAvatar="https://platform-dev-test.oss-cn-beijing.aliyuncs.com/recruit-service/2023/08/14/0c68e5a21eb9427188b9901429119f6f.png">
+    <div class="base-info">
+        <div class="base-info-left">
+            <img class="head-picture" src="${avatar!defaultAvatar}" alt="logo"/>
+        </div>
+        <div class="base-info-right">
+            <div class="base-right-top">
+                <div class="base-right-logo">
+                    <img src="icons/logo.svg" alt="logo">
+                </div>
+            </div>
+            <div class="user-name">
+                <h2>${data.name!}</h2>
+            </div>
+            <div class="info-detail">
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/phone_white.svg" alt="logo">
+                    <span class="detail-name">联系电话： </span>
+                    <span class="detail-content">${data.phone!}</span>
+                </div>
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/nationality_white.svg" alt="logo">
+                    <span class="detail-name">国际籍贯： </span>
+                    <span class="detail-content">${data.countryName!}</span>
+                </div>
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/title_white.svg" alt="logo">
+                    <span class="detail-name">职称职务： </span>
+                    <span class="detail-content">
+                        <#list data.professionalTitle! as obj>
+                            ${obj.professionalTitleName! }
+                        </#list>
+                    </span>
+                </div>
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/subjects_white.svg" alt="logo">
+                    <span class="detail-name">学科领域： </span>
+                    <span class="detail-content">
+                        <#list data.firstLevelSubjectArea! as obj>
+                            ${obj.subjectAreaName!}
+                        </#list>
+                    </span>
+                </div>
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/majors_white.svg" alt="logo">
+                    <span class="detail-name">专业方向： </span>
+                    <span class="detail-content">
+                        <#list data.researchDirection! as obj>
+                            ${obj.label!}
+                        </#list>
+                    </span>
+                </div>
+            </div>
+            <div class="info-detail2">
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/email_white.svg" alt="logo">
+                    <span class="detail-name">电子邮箱： </span>
+                    <span class="detail-content">${data.email!}</span>
+                </div>
+                <div class="detail-line">
+                    <img class="detail-logo" src="icons/location_white.svg" alt="logo">
+                    <span class="detail-name">当前地点： </span>
+                    <span class="detail-content">${data.currentLocation!}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="extra-info">
+        <#if data.educationExperience?? && data.educationExperience?size != 0>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img src="icons/education_blue.svg" alt="logo">
+                    <span class="extra-title">教育经历</span>
+                </div>
+            </div>
+            <#list data.educationExperience! as obj>
+            <div class="extra-content">
+                <div class="edu-content-left">
+                    <div class="extra-edu-date">
+                        <img src="https://axhub.im/ax9/2b00c5299b4dc5e8/images/%E7%AE%80%E5%8E%86%E9%A2%84%E8%A7%88%E6%A0%B7%E5%BC%8F/u44.svg" alt="logo">
+                        <span class="edu-date">
+                            <#if obj.startDate??>${obj.startDate?date?string("yyyy.MM")}<#else>未知</#if>-
+                            <#if obj.endDate??>${obj.endDate?date?string("yyyy.MM")}<#else>未知</#if>
+                        </span>
+                    </div>
+                    <div class="extra-detail-left">
+                        <p class="extra-detail-name">
+                            <#switch obj.degree!0>
+                                <#case 1>
+                                    博士
+                                <#break>
+                                <#case 2>
+                                    硕士
+                                <#break>
+                                <#case 3>
+                                    本科
+                                <#break>
+                                <#default>
+                                    其他
+                            </#switch>
+                        </p>
+                        <p class="extra-detail-type">
+                            <#switch obj.degree!0>
+                                <#case 1>
+                                    学术型
+                                <#break>
+                                <#case 2>
+                                    专业型
+                                <#break>
+                                <#default>
+                                    学术型
+                            </#switch>
+                        </p>
+                    </div>
+                </div>
+                <div class="edu-content-right">
+                    <div class="extra-org-logo">
+                        <img style="width: 100%; height: 100%;" src="${obj.orgLogo!defaultLogo}" alt="logo">
+                    </div>
+                    <div class="edu-info">
+                        <span class="extra-org-name">${obj.orgName?default("--")}</span>
+                        <div class="edu-info-detail">
+                            <span style="display: block">${obj.majorName?default("--")} | 导师：${obj.tutorName?default("--")}</span>
+                            <span>培养方式：
+                                <#switch obj.cultivationType!0>
+                                    <#case 1>
+                                        全日制
+                                    <#break>
+                                    <#case 2>
+                                        在职进修/成人教育
+                                    <#break>
+                                    <#case 3>
+                                        联合培养
+                                    <#break>
+                                    <#case 4>
+                                        交流访学
+                                    <#break>
+                                    <#default>
+                                        其他
+                                </#switch>
+                            </span>
+                            <span>      招生方式：
+                                <#switch obj.enrollmentType!0>
+                                    <#case 1>
+                                        统考招生
+                                    <#break>
+                                    <#case 2>
+                                        硕博连读
+                                    <#break>
+                                    <#case 3>
+                                        直接攻博
+                                    <#break>
+                                    <#case 4>
+                                        提前攻博
+                                    <#break>
+                                    <#case 5>
+                                        本博连读
+                                    <#break>
+                                    <#case 6>
+                                        同等学历申请
+                                    <#break>
+                                    <#default>
+                                        其他
+                                </#switch>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </#list>
+        </div>
+        </#if>
+        <!--        博士后经历-->
+        <#if data.postdocExperience?? && data.postdocExperience?size != 0>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img src="icons/education_blue.svg" alt="logo">
+                    <span class="extra-title">博士后经历</span>
+                </div>
+            </div>
+            <#list data.postdocExperience! as obj>
+            <div class="extra-content">
+                <div class="edu-content-left">
+                    <div class="extra-edu-date">
+                        <img src="https://axhub.im/ax9/2b00c5299b4dc5e8/images/%E7%AE%80%E5%8E%86%E9%A2%84%E8%A7%88%E6%A0%B7%E5%BC%8F/u44.svg" alt="logo">
+                        <span class="edu-date">
+                            <#if obj.startDate??>${obj.startDate?date?string("yyyy.MM")}<#else>未知</#if>-
+                            <#if obj.endDate??>${obj.endDate?date?string("yyyy.MM")}<#else>未知</#if>
+                        </span>
+                    </div>
+                    <div class="extra-detail-left">
+                        <p class="extra-detail-name">医学博士</p>
+                        <p class="extra-detail-type">学术型</p>
+                    </div>
+                </div>
+                <div class="edu-content-right">
+                    <img class="extra-org-logo" src="${obj.orgLogo!defaultLogo}" alt="logo">
+                    <div class="edu-info">
+                        <span class="extra-org-name">${obj.orgName!}</span>
+                        <div class="edu-info-detail">
+                            <span style="display: block">${obj.researchDirection!} | 导师：${obj.tutorName!}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doc-desc">
+                <span>
+                    ${obj.description!}
+                </span>
+            </div>
+            </#list>
+        </div>
+        </#if>
+
+        <!--        工作经历-->
+        <#if data.workExperience?? && data.workExperience?size != 0>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img src="icons/work_blue.svg" alt="logo">
+                    <span class="extra-title">工作经历</span>
+                </div>
+            </div>
+            <#list data.workExperience! as obj>
+            <div class="extra-content">
+                <div class="edu-content-left">
+                    <div class="extra-work-date">
+                        <img src="https://axhub.im/ax9/2b00c5299b4dc5e8/images/%E7%AE%80%E5%8E%86%E9%A2%84%E8%A7%88%E6%A0%B7%E5%BC%8F/u44.svg" alt="logo">
+                        <span class="edu-date">
+                            <#if obj.startDate??>${obj.startDate?date?string("yyyy.MM")}<#else>未知</#if>-
+                            <#if obj.endDate??>${obj.endDate?date?string("yyyy.MM")}<#else>未知</#if>
+                        </span>
+                    </div>
+                </div>
+                <div class="edu-content-right">
+                    <img class="extra-org-logo" src="${obj.orgLogo!defaultLogo}" alt="logo">
+                    <div class="edu-info">
+                        <div class="edu-info-detail">
+                            <span style="display: block">${obj.orgName!} | ${obj.position!"职位未知"}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <#if obj.description??>
+            <div class="work-desc">
+                    <span>
+                        ${obj.description!}
+                    </span>
+            </div>
+            </#if>
+            </#list>
+        </div>
+        </#if>
+
+        <!--        教学经历-->
+        <#if data.teachingExperience?? && data.teachingExperience.contentDetail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/teaching_blue.svg" alt="logo">
+                    <span class="extra-title">教学经历</span>
+                </div>
+            </div>
+            <#if data.teachingExperience.contentDetail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.teachingExperience.contentDetail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+
+        <!--        论文/著作-->
+        <#if data.paper?? && data.paper.contentDetail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/paper_blue.svg" alt="logo">
+                    <span class="extra-title">论文/著作</span>
+                </div>
+            </div>
+
+            <#if data.paper.contentDetail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.paper.contentDetail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+
+        <!--        项目/课题-->
+        <#if data.projectExperience?? && data.projectExperience.contentDetail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/projects_blue.svg" alt="logo">
+                    <span class="extra-title">项目/课题</span>
+                </div>
+            </div>
+            <#if data.projectExperience.contentDetail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.projectExperience.contentDetail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+
+        <!--        专利/成果-->
+        <#if data.patentExperience?? && data.patentExperience.contentDetail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/patents_blue.svg" alt="logo">
+                    <span class="extra-title">专利/成果</span>
+                </div>
+            </div>
+            <#if data.patentExperience.contentDetail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.patentExperience.contentDetail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+
+        <!--        奖项/称号-->
+        <#if data.awardsExperience?? && data.awardsExperience.detail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/honors_blue.svg" alt="logo">
+                    <span class="extra-title">奖项/称号</span>
+                </div>
+            </div>
+            <#if data.awardsExperience.detail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.awardsExperience.detail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+
+        <!--        其他说明-->
+        <#if data.otherExperience?? && data.otherExperience.contentDetail??>
+        <div class="extra-part">
+            <div class="extra-top">
+                <div class="extra-part-model">
+                    <img style="width: 16px;height: 16px;" src="icons/others_blue.svg" alt="logo">
+                    <span class="extra-title">其他说明</span>
+                </div>
+            </div>
+            <#if data.otherExperience.contentDetail??>
+            <div class="teach-content">
+                    <span class="teach-content-item">
+                        ${data.otherExperience.contentDetail!}
+                    </span>
+            </div>
+            </#if>
+        </div>
+        </#if>
+    </div>
+    <div class="footer">
+        <div class="footer-info">
+            <img src="icons/info_gray.svg">
+            <span>本简历由学术桥系统生成。未经许可，请勿公开、转载等。否则需要承担相应法律责任！</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
