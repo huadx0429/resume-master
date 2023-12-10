@@ -1,12 +1,12 @@
 package master.resume.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import master.resume.entity.BaseEntity;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -19,15 +19,9 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("resume_education")
-public class ResumeEducationDO implements Serializable {
+public class ResumeEducationDO extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    /**
-     * id
-     */
-      @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
 
     /**
      * 简历id
@@ -49,13 +43,10 @@ public class ResumeEducationDO implements Serializable {
      */
     private String speciality;
 
-    private Date startDate;
+    private LocalDateTime startDate;
 
-    private Date endDate;
+    private LocalDateTime endDate;
 
-    private Date createTime;
-
-    private Integer delFlag;
 
 
 }

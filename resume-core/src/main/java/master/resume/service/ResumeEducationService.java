@@ -1,7 +1,11 @@
 package master.resume.service;
 
+import master.resume.entity.ResponseBody;
 import master.resume.model.ResumeEducationDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import master.resume.vo.request.ResumeEducationAddRequest;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +17,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ResumeEducationService extends IService<ResumeEducationDO> {
 
+    ResponseBody<String> add(List<ResumeEducationAddRequest> requestList);
 }

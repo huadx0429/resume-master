@@ -23,40 +23,11 @@ public abstract class BaseEntity {
     private Long id;
 
     /**
-     * 创建者
-     */
-    @TableField(fill = FieldFill.INSERT)
-    @Schema(name = "创建者id")
-    private Long createUserId;
-
-    /**
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
     @Schema(name = "创建时间")
     private LocalDateTime createTime;
-
-    /**
-     * 更新者
-     */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    @Schema(name = "更新者id")
-    private Long updateUserId;
-
-    /**
-     * 更新时间
-     */
-    @TableField(fill = FieldFill.INSERT_UPDATE)
-    @Schema(name = "更细时间")
-    private LocalDateTime updateTime;
-
-    /**
-     * 版本号
-     */
-    @Version
-    @TableField(fill = FieldFill.INSERT)
-    @Schema(name = "版本号")
-    private Integer version;
 
     /**
      * 删除标记

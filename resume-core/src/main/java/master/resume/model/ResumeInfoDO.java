@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import master.resume.entity.BaseEntity;
 
 /**
  * <p>
@@ -18,12 +19,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("resume_info")
-public class ResumeInfoDO implements Serializable {
+public class ResumeInfoDO extends BaseEntity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-      @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
 
     private String name;
 

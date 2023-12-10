@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import master.resume.entity.BaseEntity;
 
 /**
  * <p>
@@ -19,12 +20,10 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("resume_work_experience")
-public class ResumeWorkExperienceDO implements Serializable {
+public class ResumeWorkExperienceDO extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-      @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
 
     /**
      * 简历id
@@ -46,15 +45,6 @@ public class ResumeWorkExperienceDO implements Serializable {
      */
     private String workContent;
 
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 删除标识
-     */
-    private Integer delFlag;
 
 
 }

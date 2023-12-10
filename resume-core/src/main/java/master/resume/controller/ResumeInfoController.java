@@ -1,9 +1,12 @@
 package master.resume.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import master.resume.entity.ResponseBody;
+import master.resume.service.ResumeInfoService;
+import master.resume.vo.request.ResumeInfoAddRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -14,8 +17,23 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2023-12-09
  */
 @RestController
-@RequestMapping("/resumeInfoDO")
+@RequestMapping("/api/resumeInfo/v1/")
 public class ResumeInfoController {
+
+    @Autowired
+    private ResumeInfoService resumeInfoService;
+
+
+    @PutMapping("/add")
+    public ResponseBody<String> add(@RequestBody @Valid ResumeInfoAddRequest request){
+        return resumeInfoService.add(request);
+    }
+
+
+    @PostMapping("/pdf_package")
+    public ResponseBody<String> packagePdf(Long resumeId){
+        return resumeInfoService.packagePdf(resumeId);
+    }
 
 }
 
