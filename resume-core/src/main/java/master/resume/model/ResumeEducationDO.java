@@ -1,12 +1,13 @@
 package master.resume.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import master.resume.entity.BaseEntity;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 /**
  * <p>
@@ -43,9 +44,11 @@ public class ResumeEducationDO extends BaseEntity implements Serializable {
      */
     private String speciality;
 
-    private LocalDateTime startDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private LocalDate startDate;
 
-    private LocalDateTime endDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private LocalDate endDate;
 
 
 

@@ -23,6 +23,9 @@ public class ResumeInfoAddRequest {
 
     private Integer age;
 
+    /**
+     * 1男 2女
+     */
     private Integer sex;
 
     /**

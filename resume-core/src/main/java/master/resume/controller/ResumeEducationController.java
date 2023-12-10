@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2023-12-09
  */
 @RestController
-@RequestMapping("/resumeEducationDO")
+@RequestMapping("/api/resumeEducation/v1/")
 public class ResumeEducationController {
 
     @Autowired
