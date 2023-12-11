@@ -68,12 +68,12 @@ public class ResumeInfoServiceImpl extends ServiceImpl<ResumeInfoMapper, ResumeI
                 filePath = "C:\\Users\\huade\\Desktop\\123\\" + response.getId() + ".pdf";
             } else {
                 //linux
-                filePath = "/var/log/pdf/" + response.getId() + ".pdf";
+                filePath = "/home/data/resume/" + response.getId() + ".pdf";
             }
             log.info("pdf文件路径:{}", filePath);
             pdfUtil.convert(map, filePath);
             //从服务器获取链接
-            String ossUrl = "http://resume/project.cn/u/" + response.getId() + ".pdf";
+            String ossUrl = "http://resume.project.cn/u/" + response.getId() + ".pdf";
             return ResponseBody.success(ossUrl);
         } catch (Exception e) {
             e.printStackTrace();

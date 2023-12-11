@@ -23,7 +23,7 @@ import java.util.List;
  * @since 2023-12-09
  */
 @RestController
-@RequestMapping("/resumeWorkExperienceDO")
+@RequestMapping("/api/resumeWorkExperience/v1")
 public class ResumeWorkExperienceController {
 
     @Autowired

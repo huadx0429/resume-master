@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -35,5 +37,9 @@ public class ResumeWorkExperienceResponse {
      * 工作内容
      */
     private String workContent;
+
+    private Date startDate;
+
+    private Date endDate;
 
 }

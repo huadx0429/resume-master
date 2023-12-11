@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import master.resume.entity.BaseEntity;
@@ -45,6 +47,9 @@ public class ResumeWorkExperienceDO extends BaseEntity implements Serializable {
      */
     private String workContent;
 
+    private Date startDate;
+
+    private Date endDate;
 
 
 }

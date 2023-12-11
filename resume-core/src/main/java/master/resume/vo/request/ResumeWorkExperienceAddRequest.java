@@ -1,9 +1,12 @@
 package master.resume.vo.request;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @Builder
@@ -30,5 +33,11 @@ public class ResumeWorkExperienceAddRequest {
      * 工作内容
      */
     private String workContent;
+
+    @JsonFormat(pattern = "yyyy-MM", shape = JsonFormat.Shape.STRING)
+    private Date startDate;
+
+    @JsonFormat(pattern = "yyyy-MM", shape = JsonFormat.Shape.STRING)
+    private Date endDate;
 
 }

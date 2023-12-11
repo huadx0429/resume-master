@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import master.resume.entity.BaseEntity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * <p>
@@ -44,11 +44,11 @@ public class ResumeEducationDO extends BaseEntity implements Serializable {
      */
     private String speciality;
 
-    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
-    private LocalDate startDate;
+    @JsonFormat(pattern = "yyyy-MM", shape = JsonFormat.Shape.STRING)
+    private Date startDate;
 
-    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
-    private LocalDate endDate;
+    @JsonFormat(pattern = "yyyy-MM", shape = JsonFormat.Shape.STRING)
+    private Date endDate;
 
 
 
