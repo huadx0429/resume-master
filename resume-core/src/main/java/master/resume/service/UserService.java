@@ -1,7 +1,9 @@
 package master.resume.service;
 
+import master.resume.entity.ResponseBody;
 import master.resume.model.UserDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import master.resume.vo.request.UserAddRequest;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<UserDO> {
 
+    ResponseBody<Boolean> addUser(UserAddRequest request);
 }

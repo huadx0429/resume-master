@@ -21,7 +21,10 @@ import master.resume.entity.BaseEntity;
 @TableName("resume_info")
 public class ResumeInfoDO extends BaseEntity implements Serializable {
 
-
+    /**
+     * 用户id
+     */
+    private Long userId;
     private String name;
 
     /**

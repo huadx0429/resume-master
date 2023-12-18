@@ -1,0 +1,36 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: resume-core
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/resume_master?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 19940429hdx
+
+    props:
+      # 打印执行的数据库以及语句
+      sql:
+        show: true
+
+
+#配置plus打印sql日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+sms:
+  app-code: 45c6c63343db42a789ec68f66806917d
+  template-id: M105EABDEC
+
+#阿⾥云OSS配置
+aliyun:
+  oss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tCJbJhtiaxQWGdGa1kf
+    access-key-secret: H38LzCXSxhzrQKwnXLeSNuJ2uker1k
+    bucketname: dcloud-link-2023
+
